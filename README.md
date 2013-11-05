@@ -1,7 +1,7 @@
 # Jasmine Tagged [![Build Status](https://travis-ci.org/atom/jasmine-tagged.png)](https://travis-ci.org/atom/jasmine-tagged)
 
 Allows for tagging and filtering of specific
-[Jasmine](https://github.com/pivotal/jasmine) specs. depending on the
+[Jasmine](https://github.com/pivotal/jasmine) specs depending on the
 platform.
 
 ## Installing
