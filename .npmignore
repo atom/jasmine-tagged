@@ -1,5 +1,4 @@
 .npmignore
-*.coffee
 .DS_Store
 .travis.yml
 npm-debug.log
