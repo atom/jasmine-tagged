@@ -15,7 +15,7 @@ do ->
     tags ?= []
 
     if spec.parentSuite
-      tags + findTags(spec.parentSuite)
+      tags.concat(findTags(spec.parentSuite))
     else
       tags
 
