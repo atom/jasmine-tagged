@@ -1,0 +1,36 @@
+{
+  "name": "jasmine-tagged",
+  "version": "0.1.0",
+  "description": "Tag and filter jasmine specs",
+  "main": "./lib/jasmine-tagged.js",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/atom/jasmine-tagged/raw/master/LICENSE.md"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/atom/jasmine-tagged.git"
+  },
+  "bugs": {
+    "url": "https://github.com/atom/jasmine-tagged/issues"
+  },
+  "scripts": {
+    "prepublish": "grunt clean lint coffee",
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-cli": "~0.1.8",
+    "rimraf": "~2.1.4",
+    "grunt-coffeelint": "0.0.6",
+    "temp": "~0.5.0",
+    "grunt-shell": "~0.2.2"
+  },
+  "dependencies": {
+    "jasmine-node": "git://github.com/kevinsawicki/jasmine-node.git#856823722a2bfd7470bf5143891cbb4aed9d3151",
+    "underscore": "~1.4.4"
+  }
+}
