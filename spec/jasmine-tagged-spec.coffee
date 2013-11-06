@@ -71,3 +71,26 @@ describe "jasmine-tagged", ->
 
       it "doesn't run specs with different tags", ->
         expect(env.specFilter(nestedAnotherTaggedSpec)).toBeFalsy()
+
+  describe "with a tagged suite", ->
+    [taggedSuiteSpec] = []
+
+    beforeEach ->
+      env = jasmine.getEnv()
+      suite =
+        description: 'another #tag'
+      taggedSuiteSpec =
+        description: 'no tag'
+        suite: suite
+
+    describe "with a specific tag specs", ->
+      beforeEach ->
+        env.includeSpecsWithoutTags(false)
+        env.setIncludedTags(['tag'])
+
+      afterEach ->
+        env.includeSpecsWithoutTags(true)
+        env.setIncludedTags([])
+
+      it "run specs with a matching tag", ->
+        expect(env.specFilter(taggedSuiteSpec)).toBeTruthy()

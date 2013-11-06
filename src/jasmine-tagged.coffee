@@ -14,8 +14,8 @@ do ->
     tags = (word.substring(1) for word in words when word.indexOf('#') is 0)
     tags ?= []
 
-    if spec.parentSuite
-      tags.concat(findTags(spec.parentSuite))
+    if parent = spec.parentSuite ? spec.suite
+      tags.concat(findTags(parent))
     else
       tags
 
