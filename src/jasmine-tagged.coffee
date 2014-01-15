@@ -1,32 +1,35 @@
-do ->
-  env = jasmine.getEnv()
+jasmine = global.jasmine ? require 'jasmine-focused'
 
-  includeSpecsWithoutTags = true
-  env.includeSpecsWithoutTags = (permit) ->
-    includeSpecsWithoutTags = permit
+env = jasmine.getEnv()
 
-  includedTags = []
-  env.setIncludedTags = (tags) ->
-    includedTags = tags
+includeSpecsWithoutTags = true
+env.includeSpecsWithoutTags = (permit) ->
+  includeSpecsWithoutTags = permit
 
-  findTags = (spec) ->
-    words = spec.description.split(' ')
-    tags = (word.substring(1) for word in words when word.indexOf('#') is 0)
-    tags ?= []
+includedTags = []
+env.setIncludedTags = (tags) ->
+  includedTags = tags
 
-    if parent = spec.parentSuite ? spec.suite
-      tags.concat(findTags(parent))
-    else
-      tags
+findTags = (spec) ->
+  words = spec.description.split(' ')
+  tags = (word.substring(1) for word in words when word.indexOf('#') is 0)
+  tags ?= []
 
-  originalFilter = if env.specFilter then env.specFilter else -> true
-  env.specFilter = (spec) ->
-    return false unless originalFilter(spec)
+  if parent = spec.parentSuite ? spec.suite
+    tags.concat(findTags(parent))
+  else
+    tags
 
-    tags = findTags(spec)
-    return true if includeSpecsWithoutTags and tags.length is 0
+originalFilter = if env.specFilter then env.specFilter else -> true
+env.specFilter = (spec) ->
+  return false unless originalFilter(spec)
 
-    if tags.some((t) -> includedTags.some((it) -> it is t))
-      true
-    else
-      false
+  tags = findTags(spec)
+  return true if includeSpecsWithoutTags and tags.length is 0
+
+  if tags.some((t) -> includedTags.some((it) -> it is t))
+    true
+  else
+    false
+
+module.exports = jasmine
