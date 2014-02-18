@@ -20,6 +20,9 @@
     "prepublish": "grunt clean lint coffee",
     "test": "grunt test"
   },
+  "bin": {
+    "jasmine-tagged": "./bin/jasmine-tagged"
+  },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-coffee": "~0.7.0",
