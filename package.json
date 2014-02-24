@@ -32,6 +32,6 @@
     "grunt-shell": "~0.2.2"
   },
   "dependencies": {
-    "jasmine-focused": "1.x"
+    "jasmine-focused": ">=1.0.4 <2.0"
   }
 }
