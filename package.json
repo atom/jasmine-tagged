@@ -1,6 +1,6 @@
 {
   "name": "jasmine-tagged",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Tag and filter jasmine specs",
   "main": "./lib/jasmine-tagged.js",
   "licenses": [
