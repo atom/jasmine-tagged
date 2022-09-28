@@ -1,4 +1,5 @@
-# Jasmine Tagged [![Build Status](https://travis-ci.org/atom/jasmine-tagged.svg?branch=master)](https://travis-ci.org/atom/jasmine-tagged)
+##### Atom and all repositories under Atom will be archived on December 15, 2022. Learn more in our [official announcement](https://github.blog/2022-06-08-sunsetting-atom/)
+ # Jasmine Tagged [![Build Status](https://travis-ci.org/atom/jasmine-tagged.svg?branch=master)](https://travis-ci.org/atom/jasmine-tagged)
 
 Allows for tagging and filtering of specific
 [Jasmine](https://github.com/pivotal/jasmine) specs depending on the
